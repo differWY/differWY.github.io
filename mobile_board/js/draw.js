@@ -21,6 +21,9 @@ class DrawBoard {
         this.canvas.height = this.canvasBox.height;
     }
     init(){
+        document.addEventListener('touchmove',function(e){
+           e.preventDefault();
+        });
         this.draw();
     }
     draw(){
