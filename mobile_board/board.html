@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas画板</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            overflow: hidden;
+        }
+        ul,li{
+            list-style: none;
+        }
+        html{
+            font-size: 100px;
+        }
+        .content{
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        .ctrl_area{
+            flex: 0 0 0.6rem;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            border-bottom: 1px solid #000;
+        }
+        .canvas_area{
+            flex: 1;
+            display: flex;
+        }
+        .canvas_area canvas{
+            flex: 1;
+            width: 100%;
+        }
+        .color_select{
+            flex: 0 0 20%;
+            display: flex;
+            width:50%;
+            height: 0.2rem;
+            justify-content: center;
+        }
+        .color_select .color_select_input{
+            height: 100%;
+        }
+        .size_select{
+            flex: 0 0 60%;
+            display: flex;
+            justify-content: space-around;
+            height: 0.2rem;
+        }
+        .size_select .size_select_item{
+            display: flex;
+            flex:1;
+            justify-content: center;
+            height: 100%;
+        }
+        .size_select .size_select_item button{
+            width: 0.5rem;
+            height: 100%;
+        }
+        .clear_select{
+            flex: 0 0 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .clear_canvas{
+            font-size: 0.1rem;
+        }
+    </style>
+    <script>
+        ;(function(win, doc){
+            function change(){
+                doc.documentElement.style.fontSize = doc.documentElement.clientWidth * 100 / 375 + 'px';
+            }
+            win.addEventListener('DOMContentLoaded', change);
+            win.addEventListener('resize', change);
+        })(window, document);
+    </script>
+</head>
+<body>
+    <div class="content">
+        <div class="ctrl_area">
+            <div class="color_select">
+                <input id="colorSelectInput" class="color_select_input" type="color">
+            </div>
+            <ul class="size_select">
+                <li class="size_select_item"><button id="thickSize">钢笔</button></li>
+                <li class="size_select_item"><button id="middleSize">记号笔</button></li>
+                <li class="size_select_item"><button id="boldSize">马克笔</button></li>
+            </ul>
+            <div class="clear_select">
+                <a id="clearAll" class="clear_canvas" href="javascript:;">清空画布</a>
+                <a id="penType" class="clear_canvas" href="javascript:;">橡皮擦</a>
+            </div>
+        </div>
+        <div class="canvas_area">
+            <canvas id="canvas">您的浏览器不支持canvas，请尽快升级！</canvas>
+        </div>
+    </div>
+    <script src="js/draw.js?v=0.0.1"></script>
+    <script src="js/board_event.js?v=0.0.1"></script>
+</body>
+</html>
