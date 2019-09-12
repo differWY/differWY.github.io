@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css" media="screen">
+		section{
+			width: 100vw;
+			height: auto;
+		}
+		div{
+			width: 100%;
+		}
+		ul,li{
+			list-style: none;
+		}
+		#soundY{
+			height: 30px;
+			line-height: 30px;
+			margin-bottom:20px;
+			border-bottom: 2px solid red;
+		}
+		#remixY{
+			width:100vw;
+			height:600px;
+			line-height: 30px;
+		}
+		#remixY li{
+			width: 100%;
+			height: 30px;
+			line-height: 30px;
+			float: left;
+		}
+		#soundY span,
+		#remixY span{
+			display: inline-block;
+			float:left;
+			margin: 0 10px 0 10px;
+		}
+		button,
+		span#totalCon{
+			float:left;
+			margin-right:10px;
+		}
+	</style>
+</head>
+<body>
+	<div style="float: left; width: 100%; height: 30px; line-height: 24px;" >
+		<button id="genButton">生成数据</button>
+		<button id="getTotal" >获取总数</button>
+		<span id="totalCon" ></span>
+	</div>
+	<section style="float: left;">
+		<div id="soundY"></div>
+		<div id="remixY"></div>
+	</section>
+	<script src="count.js"></script>
+</body>
+</html>
